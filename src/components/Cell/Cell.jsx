@@ -1,22 +1,22 @@
 import React from "react";
-import styles from "./Cell.module.scss";
+import "./Cell.scss";
 
 export const Cell = ({ id, cell, cells, setCells, go, setGo }) => {
   // console.log(cell);
   const handleClick = (e) => {
     const taken =
-      e.target.firstChild.classList.contains(styles.circle) ||
-      e.target.firstChild.classList.contains(styles.cross);
+      e.target.firstChild.classList.contains("circle") ||
+      e.target.firstChild.classList.contains("cross");
 
     if (!taken) {
       if (go === "circle") {
-        e.target.firstChild.classList.add(styles.circle);
-        handleCellChange(styles.circle);
+        e.target.firstChild.classList.add("circle");
+        handleCellChange("circle");
         setGo("cross");
       }
       if (go === "cross") {
-        e.target.firstChild.classList.add(styles.cross);
-        handleCellChange(styles.cross);
+        e.target.firstChild.classList.add("cross");
+        handleCellChange("cross");
         setGo("circle");
       }
     }
@@ -31,11 +31,11 @@ export const Cell = ({ id, cell, cells, setCells, go, setGo }) => {
       }
     });
 
-    setCells(nextCells)
+    setCells(nextCells);
   };
 
   return (
-    <div className={styles.square} id={id} onClick={handleClick}>
+    <div className={"square"} id={id} onClick={handleClick}>
       <div className={cell}></div>
     </div>
   );
