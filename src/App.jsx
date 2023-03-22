@@ -8,6 +8,7 @@ function App() {
   const [winnindMessage, setWinnindMessage] = useState(null);
 
   const message = `It's now ${go}'s go.`;
+  console.log(cells);
 
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
             key={index}
             id={index}
             cell={cell}
+            cells = {cells}
             setCells={setCells}
             go={go}
             setGo={setGo}

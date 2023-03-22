@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Cell.module.scss";
 
-export const Cell = ({ id, cell, setCells, go, setGo }) => {
+export const Cell = ({ id, cell, cells, setCells, go, setGo }) => {
   // console.log(cell);
   const handleClick = (e) => {
     const taken =
@@ -11,13 +11,27 @@ export const Cell = ({ id, cell, setCells, go, setGo }) => {
     if (!taken) {
       if (go === "circle") {
         e.target.firstChild.classList.add(styles.circle);
+        handleCellChange(styles.circle);
         setGo("cross");
       }
       if (go === "cross") {
         e.target.firstChild.classList.add(styles.cross);
+        handleCellChange(styles.cross);
         setGo("circle");
       }
     }
+  };
+
+  const handleCellChange = (className) => {
+    const nextCells = cells.map((cell, index) => {
+      if (index === id) {
+        return className;
+      } else {
+        return cell;
+      }
+    });
+
+    setCells(nextCells)
   };
 
   return (
