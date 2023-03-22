@@ -12,6 +12,7 @@ function App() {
 
   const handleReset = () => {
     setCells(["", "", "", "", "", "", "", "", ""]);
+    setWinnindMessage(null)
   };
 
   const checkScore = () => {
