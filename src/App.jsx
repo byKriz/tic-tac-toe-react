@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import { Cell } from './components/Cell/Cell'
+import { useState } from "react";
+import { Cell } from "./components/Cell/Cell";
+import styles from "./App.module.scss";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <Cell />
+      <div className={styles.gameboard}>
+        <Cell />
+      </div>
+      <p></p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
