@@ -3,7 +3,7 @@ import styles from "./Cell.module.scss"
 
 export const Cell = () => {
   return (
-    <div className={styles.square}>Cell
+    <div className={styles.square}>
     
     </div>
   )
