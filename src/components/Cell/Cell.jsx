@@ -1,7 +1,7 @@
 import React from "react";
 import "./Cell.scss";
 
-export const Cell = ({ id, cell, cells, setCells, go, setGo }) => {
+export const Cell = ({ id, cell, cells, setCells, go, setGo, winnindMessage }) => {
   // console.log(cell);
   const handleClick = (e) => {
     const taken =
@@ -35,7 +35,7 @@ export const Cell = ({ id, cell, cells, setCells, go, setGo }) => {
   };
 
   return (
-    <div className={"square"} id={id} onClick={handleClick}>
+    <div className={"square"} id={id} onClick={!winnindMessage && handleClick}>
       <div className={cell}></div>
     </div>
   );
